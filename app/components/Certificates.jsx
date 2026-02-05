@@ -8,7 +8,7 @@ const certificates = [
     title: "Introduction to SQL",
     issuer: "SIMPLILEARN",
     image: "/sqlcert.jpg",
-    file: "/Sql Cert.pdf",
+    file: "/sqlcert.pdf",
   },
   {
     title: "Build Complete CMS Blog in PHP & MySQL Bootstrap & PDO",
