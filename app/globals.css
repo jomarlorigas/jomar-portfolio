@@ -1,26 +1,61 @@
 @import "tailwindcss";
+@theme
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+:inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-text-sub: var(--text-sub);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+/* ===============================
+   GLOBAL COLOR SYSTEM
+================================ */
+:root {
+  --background: #0b0f19;
+  --foreground: #f9fafb;
+
+  --card: #111827;
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+  --text-sub: #9ca3af;
 }
+
+
+
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+
+  /* Animated Gradient Layers */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.2), transparent 40%),
+    linear-gradient(135deg, #0b0f19, #070a13, #05070f);
+
+  background-size: 200% 200%;
+  animation: gradientMove 18s ease infinite;
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* ===============================
+   SELECTION STYLE
+================================ */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+section {
+  position: relative;
+  z-index: 1;
+}
+.bg-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
 }
